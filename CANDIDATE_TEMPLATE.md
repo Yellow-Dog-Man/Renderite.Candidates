@@ -1,4 +1,4 @@
-# <RENDERER_NAME>
+# RENDERER_NAME
 **Repository:** URL_TO_REPOSITORY
 
 **License:** LICENSE
@@ -20,10 +20,10 @@
 This is the "meat" of the evaluation - going through our list of requirements and checking how well the renderer matches the required features.
 
 > [!IMPORTANT]
-> Please read the README.MD on how to contribute and work with this document!
+> Please read the [README.md](README.md) on how to contribute and work with this document!
 
 > [!NOTE]
-> This is based on the REQUIREMENTS.MD document, but with some notes & context removed to keep it cleaner.
+> This is based on the [REQUIREMENTS.md](REQUIREMENTS.md) document, but with some notes & context removed to keep it cleaner.
 > When evaluating features, check the matching features in that document for more context / information!
 
 ## VR Rendering
