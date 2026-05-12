@@ -1,20 +1,20 @@
 # <RENDERER_NAME>
-**Repository:** <URL_TO_REPOSITORY>
+**Repository:** URL_TO_REPOSITORY
 
-**License:** <LICENSE>
+**License:** LICENSE
 
 ## Basic Overview
-**Programming language(s):** <LIST OF PROGRAMMING LANGUAGES>
+**Programming language(s):** LIST OF PROGRAMMING LANGUAGES
 
-**Rendering paths:** <LIST OF SUPPORTED RENDERING PATHS>
+**Rendering paths:** LIST OF SUPPORTED RENDERING PATHS
 
-**Graphics API's:** <LIST OF SUPPORTED GRAPHICS API's>
+**Graphics API's:** LIST OF SUPPORTED GRAPHICS API's
 
-**Supported platforms:** <LIST OF SUPPORTED PLATFORMS>
+**Supported platforms:** LIST OF SUPPORTED PLATFORMS
 
-**Oldest supported hardware:** <WHAT'S THE OLDEST SUPPORTED HW>
+**Oldest supported hardware:** WHAT'S THE OLDEST SUPPORTED HW
 
-**VR API's:** <LIST OF SUPPORTED VR API's>
+**VR API's:** LIST OF SUPPORTED VR API's
 
 # New Renderer Requirements
 This is the "meat" of the evaluation - going through our list of requirements and checking how well the renderer matches the required features.
@@ -312,11 +312,5 @@ If these are not supported, they should be trivial to implement in Phase 3.
      - ❓Pressure, tilt etc...
 
 ## Other "nice to have"
-There's a few features that we'd consider "nice to have" in the renderer as a bonus points - however they will only mainly matter if the renderer is otherwise equal (or better) than other candidates.
-
-If the renderer has some fundamental problems, having the "nice to have" features will not make us pick it over others.
-
-Most of these we could implement into the renderer at later point when we introduce those features.
-
 - ❓Spout support
 - ❓Video encoding support (e.g. FFmpeg/NVENC integration and so on)
