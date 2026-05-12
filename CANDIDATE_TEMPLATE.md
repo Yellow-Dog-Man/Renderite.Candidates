@@ -16,6 +16,23 @@
 
 **VR API's:** LIST OF SUPPORTED VR API's
 
+**Activity:**
+- Rough contributor count: ❓
+- Rough user/community size: ❓
+
+# Existing usage / projects made with this
+Any high (or even low if they're noteworthy) profile projects and companies using this project. Include links and any notes that are important.
+
+# General notes
+Anything noteworthy that's not related to the any of the requirements directly should be added to this section.
+
+## Positive highlights
+
+## Potential concerns
+
+## Other notes
+
+
 # New Renderer Requirements
 This is the "meat" of the evaluation - going through our list of requirements and checking how well the renderer matches the required features.
 
