@@ -1,13 +1,19 @@
 # <RENDERER_NAME>
 **Repository:** <URL_TO_REPOSITORY>
+
 **License:** <LICENSE>
 
 ## Basic Overview
 **Programming language(s):** <LIST OF PROGRAMMING LANGUAGES>
+
 **Rendering paths:** <LIST OF SUPPORTED RENDERING PATHS>
+
 **Graphics API's:** <LIST OF SUPPORTED GRAPHICS API's>
+
 **Supported platforms:** <LIST OF SUPPORTED PLATFORMS>
+
 **Oldest supported hardware:** <WHAT'S THE OLDEST SUPPORTED HW>
+
 **VR API's:** <LIST OF SUPPORTED VR API's>
 
 # New Renderer Requirements
@@ -21,18 +27,22 @@ This is the "meat" of the evaluation - going through our list of requirements an
 > When evaluating features, check the matching features in that document for more context / information!
 
 ## Legend:
-❓- Unknown - hasn't been evaluated yet
+❓Unknown - hasn't been evaluated yet
   - These are requirements that still need evaluation. Take a look into these and figure out how they match!
-✅- Fully supported - will fullfill our requirements with full feature parity
+
+✅Fully supported - will fullfill our requirements with full feature parity
   - This was determined to be fully supported by this renderer with no gotcha's or strings attached
-⚠️- Partial - has similar feature
+
+⚠️Partial - has similar feature
   - This is supported somewhat, but doesn't quite match what we require and may require changes
   - Please add 📖note on what exactly is not matching
-🔜- In-progress - this is either currently worked on or is on roadmap
+
+🔜In-progress - this is either currently worked on or is on roadmap
   - Please add 📖note with context
   - Include links to documentation / PR's / issues that have more info
   - If possible, include timeline
-🛑 - Not supported
+
+🛑Not supported
   - The feature is not supported at all and it doesn't seem to be on roadmap
   - We'll need to evaluate how complex this would be to add ourselves
   - Is possible, add 📖note to provide context on potential implementation complexity if you can
@@ -44,14 +54,13 @@ This is the "meat" of the evaluation - going through our list of requirements an
 
 **Example:**
 
-❓- Some feature
+-❓Some feature
 
 You can change status to:
 
-⚠️- Some feature
+-⚠️Some feature
   - 📖 Cannot do XYZ
   - 📖 Could be done via ABC
-
 
 ## VR Rendering
 **Required:**
