@@ -19,7 +19,7 @@
 **VR API's:** ✅ OpenXR
 
 **Activity:**
-- Rough contributor count: ✅ 11
+- Rough contributor count: ✅ 12
 - Rough user/community size: ✅ Repo traffic includes hundreds of unique clones
 
 # Existing usage / projects made with this
