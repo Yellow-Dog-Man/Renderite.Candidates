@@ -19,7 +19,9 @@ You can learn more about it here: [Road To New Renderer](https://github.com/Yell
 Our current Unity renderer is open source! You can look at its code for reference. It's in these repositories:
 
 [Unity Project](https://github.com/Yellow-Dog-Man/Renderite.Unity.Renderer)
+
 [Renderite](https://github.com/Yellow-Dog-Man/Renderite) (main library & IPC mechanism)
+
 [Shaders](https://github.com/Yellow-Dog-Man/Resonite.UnityShaders)
 
 # What's Phase 2?
