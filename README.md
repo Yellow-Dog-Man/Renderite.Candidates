@@ -11,14 +11,16 @@ You can get Resonite completely for free on Steam here: https://store.steampower
 # Why a new renderer?
 This is part of our "Road To New Renderer" project, which aims to replace the current Unity-based renderer with one that we have a full control over. This will not only provide performance benefits, but allow us to add new faetures.
 
-This project has four phases. This is phase 2. You can learn more about it here: https://github.com/Yellow-Dog-Man/Resonite-Issues/discussions/5830
+This project has four phases. This is phase 2.
+
+You can learn more about it here: [Road To New Renderer](https://github.com/Yellow-Dog-Man/Resonite-Issues/discussions/5830)
 
 # Reference repositories
 Our current Unity renderer is open source! You can look at its code for reference. It's in these repositories:
 
-Unity Project: https://github.com/Yellow-Dog-Man/Renderite.Unity.Renderer
-Renderite (main library & IPC mechanism): https://github.com/Yellow-Dog-Man/Renderite
-Shaders: https://github.com/Yellow-Dog-Man/Resonite.UnityShaders
+[Unity Project](https://github.com/Yellow-Dog-Man/Renderite.Unity.Renderer)
+[Renderite](https://github.com/Yellow-Dog-Man/Renderite) (main library & IPC mechanism)
+[Shaders](https://github.com/Yellow-Dog-Man/Resonite.UnityShaders)
 
 # What's Phase 2?
 In phase 1, we have built a list of requirements - things we need (or want) the new renderer to support. Having this list, we can now look for potential candidates - existing projects that we could base our renderer on. 
