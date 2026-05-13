@@ -21,7 +21,7 @@
 - Rough user/community size: ❓
 
 # Existing usage / projects made with this
-Any high (or even low if they're noteworthy) profile projects and companies using this project. Include links and any notes that are important.
+Any high profile (or low profile if they're particularly relevant) projects and companies using this project. Include links and any notes that are important.
 
 # General notes
 Anything noteworthy that's not related to the any of the requirements directly should be added to this section.
