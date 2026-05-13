@@ -9,7 +9,7 @@ The goal of this repository is to allow collaboration on finding a good candidat
 You can get Resonite completely for free on Steam here: https://store.steampowered.com/app/2519830/Resonite/
 
 # Why a new renderer?
-This is part of our "Road To New Renderer" project, which aims to replace the current Unity-based renderer with one that we have a full control over. This will not only provide performance benefits, but allow us to add new faetures.
+This is part of our "Road To New Renderer" project, which aims to replace the current Unity-based renderer with one that we have a full control over. This will not only provide performance benefits, but allow us to add new features.
 
 This project has four phases. This is phase 2.
 
