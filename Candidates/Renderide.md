@@ -1,22 +1,22 @@
-# RENDERER_NAME
-**Repository:** URL_TO_REPOSITORY
+# Renderide
+**Repository:** https://github.com/DoubleStyx/Renderide
 
-**License:** LICENSE
+**License:** MIT
 
 ## Basic Overview
-**Programming language(s):** LIST OF PROGRAMMING LANGUAGES
+**Programming language(s):** Rust, C#
 
-**Shading language(s):** LIST OF SUPPORTED SHADING LANGUAGES
+**Shading language(s):** ❓
 
-**Rendering paths:** LIST OF SUPPORTED RENDERING PATHS
+**Rendering paths:** ❓
 
-**Graphics API's:** LIST OF SUPPORTED GRAPHICS API's
+**Graphics API's:** ❓
 
-**Supported platforms:** LIST OF SUPPORTED PLATFORMS
+**Supported platforms:** ❓
 
-**Oldest supported hardware:** WHAT'S THE OLDEST SUPPORTED HW
+**Oldest supported hardware:** ❓
 
-**VR API's:** LIST OF SUPPORTED VR API's
+**VR API's:** ❓
 
 **Activity:**
 - Rough contributor count: ❓
@@ -29,6 +29,7 @@ Any high profile (or low profile if they're particularly relevant) projects and 
 Anything noteworthy that's not related to the any of the requirements directly should be added to this section.
 
 ## Positive highlights
+- Tailor-made for Resonite as alternative renderer
 
 ## Potential concerns
 
