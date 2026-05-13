@@ -70,12 +70,16 @@ This is the bulk of what's needed to be done - research each candidate and evalu
 > Keep PR's small! They are faster to discuss and easier to merge and will conflict with other suggestions less.
 > It's perfectly OK to make lots of small PR's.
 
-## Legend:
+### Legend:
 Use these symbols in the candidate document to mark the status of each requirement.
 
 ❓Unknown - hasn't been evaluated yet
   - These are requirements that still need evaluation. Take a look into these and figure out how they match!
 
+🗨In discussion - feature is harder to evaluate and needs discussion
+  - If it's hard to tell if the feature is properly supported or not and needs discussion, you can mark the feature like this
+  - Include link to the discussion in the note to direct people towards it
+  
 ✅Fully supported - will fullfill our requirements with full feature parity
   - This was determined to be fully supported by this renderer with no gotcha's or strings attached
 
@@ -94,9 +98,10 @@ Use these symbols in the candidate document to mark the status of each requireme
   - Is possible, add 📖note to provide context on potential implementation complexity if you can
 
 ### Notes
-📖 - Note
-  - Please add notes where possible with extra context!
-  - Add them as bulletpoints with the 📖 symbol at start
+📖Note
+  - Please add notes where possible with important context to the document!
+  - Add them as bulletpoints with the 📖 symbol at start for each feature
+  - Only important things please!
 
 **Example:**
 
@@ -107,3 +112,6 @@ You can change status to:
 -⚠️Some feature
   - 📖 Cannot do XYZ
   - 📖 Could be done via ABC
+
+## When will phase 2 end?
+This will likely run for at least a few weeks while we focus on other features (like the IK). We'll close this once we feel comfortable making a decision on which renderer to go with.
