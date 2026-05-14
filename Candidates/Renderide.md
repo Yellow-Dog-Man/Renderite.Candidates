@@ -19,8 +19,8 @@
 **VR API's:** ✅ OpenXR
 
 **Activity:**
-- Rough contributor count: ✅ 12
-- Rough user/community size: ✅ Repo traffic includes hundreds of unique clones
+- Rough contributor count: ✅ 13
+- Rough user/community size: ✅ Repo traffic includes hundreds of unique clones; 43 stars
 
 # Existing usage / projects made with this
 Any high profile (or low profile if they're particularly relevant) projects and companies using this project. Include links and any notes that are important.
@@ -126,7 +126,7 @@ This is the "meat" of the evaluation - going through our list of requirements an
 	- ✅ Needs to support wave intrinsics
 
 **Ideal:**
-- ⚠️ Slang support (Slang does not support `MULTIVIEW` for wgsl; wgsl already cross-compiles to different backends)
+- ⚠️ Slang support (Slang does not support `MULTIVIEW` for wgsl yet; wgsl already cross-compiles to different backends)
 - ✅ SPIR-V
 - ✅ Existing PBR/PBS shaders
 
