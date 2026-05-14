@@ -126,7 +126,8 @@ This is the "meat" of the evaluation - going through our list of requirements an
 	- ✅ Needs to support wave intrinsics
 
 **Ideal:**
-- ⚠️ Slang support (Slang does not support `MULTIVIEW` for wgsl yet; wgsl already cross-compiles to different backends)
+- ⚠️ Slang support
+  - 📖 Slang does not support `MULTIVIEW` for wgsl yet; wgsl already cross-compiles to different backends
 - ✅ SPIR-V
 - ✅ Existing PBR/PBS shaders
 
