@@ -44,12 +44,12 @@
 
 **Activity:**
 - Rough contributor count: ✅ 13
-- Rough user/community size: ✅ Repo traffic includes hundreds of unique clones; 43 stars
+- Rough user/community size: ✅ Hundreds of unique clones and 43 stars
 
 # Existing usage / projects made with this
 Any high profile (or low profile if they're particularly relevant) projects and companies using this project. Include links and any notes that are important.
 
-- N/A - Designed directly for interfacing with FrooxEngine and its content requirements.
+- N/A - designed directly for interfacing with FrooxEngine and its content requirements.
 
 # General notes
 Anything noteworthy that's not related to the any of the requirements directly should be added to this section.
@@ -207,7 +207,8 @@ These requirements are on top of standard mesh rendering.
 - ✅ Blendshape support
 	- ✅ Multi-frame support (each blendshape goes through several frames)
 	- ✅ Positions, Normals & Tangents
-- ✅ GPU accelerated for good performance (done with a compute shader; can be done with mesh shaders later)
+- ✅ GPU accelerated for good performance
+  - 📖 Done with a compute shader; can be implemented for mesh shaders later
 
 **Nice to have:**
 - 🔜 More than 4 bones
