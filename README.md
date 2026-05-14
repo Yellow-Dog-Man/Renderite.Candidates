@@ -1,8 +1,3 @@
-> [!IMPORTANT]
-> Phase 2 hasn't opened yet. Wait for official annoucement (and this notice to go away).
-
-This is currently work in progress. Instructions on how to contribute will come soon!
-
 # What is this?
 The goal of this repository is to allow collaboration on finding a good candidate for new official renderer for Resonite. Resonite is a social VR sandbox where you can build anything in-game, realtime and with realtime collaboration and implicit network synchronization. 
 
