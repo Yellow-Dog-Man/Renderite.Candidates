@@ -12,7 +12,7 @@
 
 **Shading language(s):**
 - ✅ WGSL
-  - 📖 Primary)
+  - 📖 Primary
 - ✅ SPIR-V
 - ✅ GLSL
 - ✅ Naga IR 
