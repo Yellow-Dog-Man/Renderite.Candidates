@@ -37,7 +37,7 @@
 
 **Oldest supported hardware:** 
 - 🗨 Tested with GTX 1080 Ti and newer
-  - 📖 Theoretically should work on GTX 600 or newer)
+  - 📖 Theoretically should work on GTX 600 or newer
 
 **VR API's:** 
 - ✅ OpenXR
