@@ -4,19 +4,43 @@
 **License:** MIT
 
 ## Basic Overview
-**Programming language(s):** Rust (primary), C# (for shared type generation only)
+**Programming language(s):**
+- ✅ Rust
+  - 📖 Primary
+- ✅ C#
+  - 📖 For shared type generation only
 
-**Shading language(s):** ✅ WGSL (primary), SPIR-V, GLSL, Naga IR 
+**Shading language(s):**
+- ✅ WGSL
+  - 📖 Primary)
+- ✅ SPIR-V
+- ✅ GLSL
+- ✅ Naga IR 
 
-**Rendering paths:** ✅ Clustered forward
+**Rendering paths:**
+- ✅ Clustered forward
 
-**Graphics API's:** ✅ wgpu (backends include Vulkan, Metal, DirectX, OpenGL)
+**Graphics API's:**
+- ✅ wgpu
+  - 📖 Backends include:
+    - ✅ Vulkan
+    - ✅ Metal
+    - ✅ DirectX
+    - ✅ OpenGL
 
-**Supported platforms:** ✅ Windows, MacOS, Linux
+**Supported platforms:**
+- ✅ Windows
+- ✅ MacOS
+  - 📖 Native support
+- ✅ Linux
+  - 📖 Native support
 
-**Oldest supported hardware:** 🗨 Tested with GTX 1080 Ti and newer (theoretically should work on GTX 600 or newer)
+**Oldest supported hardware:** 
+- 🗨 Tested with GTX 1080 Ti and newer
+  - 📖 Theoretically should work on GTX 600 or newer)
 
-**VR API's:** ✅ OpenXR
+**VR API's:** 
+- ✅ OpenXR
 
 **Activity:**
 - Rough contributor count: ✅ 13
