@@ -1,26 +1,46 @@
 # OGRE-Next
 **Repository:** https://github.com/OGRECave/ogre-next
 
-**License:** MIT
+**License:** 
+
+- ✅MIT
 
 ## Basic Overview
-**Programming language(s):** C++/C
+**Programming language(s):** 
+
+- ⚠️C/C++
 
 **Shading language(s):** HLMS (Compiles to GLSL, HLSL, MSL, SPIR-v)
 
-**Rendering paths:** LIST OF SUPPORTED RENDERING PATHS
+**Rendering paths:** 
 
-**Graphics API's:** Vulkan, Metal, OpenGL 3.3+, DirectX 11
+- ✅Clustered Forward
 
-**Supported platforms:** Windows 7+, Linux, macOS, iOS, Android
+**Graphics API's:** 
+
+- ✅Vulkan
+- ✅Metal
+- 🛑DirectX 12
+  - 📖Has DirectX 11 but no 12. [An issue is open on the repo, but there's no word on whether this is planned or not.](https://github.com/OGRECave/ogre-next/issues/561)
+- 📖OpenGL 3.3+ is supported, but since Vulkan is supported this is probably not be relevant. 
+
+**Supported platforms:** 
+- ✅Windows 7+
+- ✅Linux
+- ✅macOS
+- ✅iOS
+- ✅Android
 
 **Oldest supported hardware:** ❓
 
-**VR API's:** OpenVR
+**VR API's:** 
+- ⚠️OpenVR
+  - 📖Single-pass stereo is supported and in the codebase separated from the OpenVR implementation; so, it wouldn't be the most difficultest task ever made to build OpenXR support using the existing OpenVR support as reference. It would just... be a pain.
 
 **Activity:**
 - Rough contributor count: 186
 - Rough user/community size: ❓
+  - 📖It's a bit difficult to gauge this one, since usage is diffuse as a long-life project. There is a [forum](https://forums.ogre3d.org/viewforum.php?f=25) that doesn't have a clear user count and a [Gitter (Matrix room)](https://matrix.to/#/#OGRECave_ogre-next:gitter.im) that has 28 members. It is mentioned commonly online in gamedev subreddits and will have others out there that know how to use it, but it's not a huge one.
 
 # Existing usage / projects made with this
 Several examples are included on the OGRE-Next repository; highest profile is [Yoy Simulators](https://www.yoy.cl/), a commercial VR simulator integrator.
@@ -61,33 +81,40 @@ This is the "meat" of the evaluation - going through our list of requirements an
 - ❓Ability to control the order of rendering and sorting
 		- ❓ **Ideal:** Ability to create a “group/batch” of render entities that are rendered at once as an unit and have their own internal sorting order
 
-- ❓ Stencil buffer support
+- 🗨Stencil buffer support
 	- Supported operations must match the currently exposed ones through materials
-		- ❓8 byte integer (0 to 255)
-		- ❓Comparison modes:
+		- ✅8 byte integer (0 to 255)
+		- 🗨Comparison modes:
 			- ❓Disabled
-			- ❓Never
-			- ❓Less
-			- ❓Equal
-			- ❓LessOrEqual
-			- ❓Greater
-			- ❓NotEqual
-			- ❓GreaterOrEqual
-			- ❓Always
-		- ❓Stencil Operations
-			- ❓Keep
-			- ❓Zero
-			- ❓Replace
-			- ❓IncrementSaturate
-			- ❓DecrementSaturate
-			- ❓Invert
-			- ❓IncrementWrap
-			- ❓DecrementWrap
-		- ❓Read & Write masks
-- ❓LOD support
+			- ✅Never
+              - 📖Called "CMPF_ALWAYS_FAIL" 
+			- ✅Less
+			- ✅Equal
+			- ✅LessOrEqual
+               - 📖Called "CMPF_LESS_EQUAL" 
+			- ✅Greater
+			- ✅NotEqual
+			- ✅GreaterOrEqual
+               - 📖Called "CMPF_GREATER_EQUAL" 
+			- ✅Always
+              - 📖Called "CMPF_ALWAYS_PASS" 
+		- ✅Stencil Operations
+			- ✅Keep
+			- ✅Zero
+			- ✅Replace
+			- ✅IncrementSaturate
+              - 📖Just called "Increment" in documentation.
+			- ✅DecrementSaturate
+              - 📖Just called "Decrement" in documentation.
+			- ✅Invert
+			- ✅IncrementWrap
+			- ✅DecrementWrap
+		- ✅Read & Write masks
+- ✅LOD support
 	- ❓Per-render switching between render entities depending on relative size on the screen
 	- ❓Ideally blending support (e.g. through material/shader properties)
-- ❓Some form of Global Illumination (GI) support
+- ✅Some form of Global Illumination (GI) support
+  -📖 Actually quite extensive here - [dedicated documentation, parallax-corrected cubemaps, per-pixel PCC, irradiance volume, voxel cone tracing. cascaded image voxel cone tracing, irradiance field with depth, and instant radiosity are supported](https://ogrecave.github.io/ogre-next/api/latest/_gi_methods.html#GiPCC) 
 - ❓ GPU instancing
 	- ❓ Ideally fully automated from the render entities
 	- ❓ Efficiently render large number of entities with the same material & mesh
@@ -100,7 +127,7 @@ This is the "meat" of the evaluation - going through our list of requirements an
 
 **Ideal:**
 - ❓HDR display output
-- ❓Multiple Window support
+- ✅Multiple Window support
 - ❓Mesh shaders (with meshlets) pipeline
   - ❓Provide fallback for older GPU's
 - ❓Better alpha sorting/blending handling
@@ -115,7 +142,7 @@ This is the "meat" of the evaluation - going through our list of requirements an
 ## Shader pipeline
 **Required:**
 - ❓Shader pipeline must be isolated enough (or made to be isolated) so it can be invoked from our own code at runtime to dynamically compile shaders
-- ❓Compute Shader support
+- ✅Compute Shader support
 	- ❓Needs to support wave intrinsics
 
 **Ideal:**
@@ -135,10 +162,12 @@ To match feature parity, the rendering pipeline needs to support the same/simila
 	- ❓Support object blur
 	- ❓Support skinned mesh blur
 	- ❓Ideally supported both in VR & desktop, but desktop is sufficient
-- ❓Ambient Occlusion
-- ❓Anti-aliasing
-	- ❓MSAA (given by the rendering path)
-- ❓ VR & single pass support
+- ✅Ambient Occlusion
+  - 📖SSAO sample in repo 
+- ✅Anti-aliasing
+	- ✅MSAA (given by the rendering path)
+    - 📖SMAA sample in repo
+- ✅ VR & single pass support
 
 **Nice to have:**
 - ❓Screen space reflections
@@ -149,7 +178,7 @@ To match feature parity, the rendering pipeline needs to support the same/simila
 	- ❓TAA
 	- ❓FXAA
 	- ❓CTAA
-	- ❓SMAA
+	- ✅SMAA
 	- …
 
 ## Rendering components / entities
@@ -157,9 +186,9 @@ Note that the structure does not need to match the current ones, but the engine 
 
 ### Mesh Rendering
 **Must have:**
-- ❓Triangle topology
+- ✅Triangle topology
 - ❓Point topology
-- ❓Some form of submesh support
+- ✅Some form of submesh support
 	- ❓Allow specifying materials for each submesh - the whole mesh is rendered & culled as a unit, but each submesh is its own 
 - ❓Shadow rendering support (depending on material support)
 	- ❓Single sided
@@ -189,8 +218,8 @@ These requirements are on top of standard mesh rendering.
 **Required:**
 - Supported types:
   - ✅Point
-  - ❓Spot
-  - ❓Directional
+  - ✅Spot
+  - ✅Directional
 - Supported features:
 	- ❓Hard & Soft realtime shadows for for all types
 	- ❓Multiple instances of each type
@@ -206,10 +235,10 @@ These requirements are on top of standard mesh rendering.
 
 ### Cameras
 **Required:**
-- ❓Support rendering additional views (other than primary view) into a render texture
+- ✅Support rendering additional views (other than primary view) into a render texture
 - ❓Double buffering support (cameras see the contents of their own render texture from previous frame)
 - ❓Support camera stacking with render order (depth)
-	- ❓Multiple cameras must be able to render into the same texture
+	- ✅Multiple cameras must be able to render into the same texture
 	- ❓Order must be able to be defined (e.g. with depth value)
 	- ❓Must support viewport configuration (rendering to a sub-section of the render texture)
 	- ❓Must support different clear methods (none, depth only, color/skybox)
@@ -237,7 +266,8 @@ Since FrooxEngine has its own scene model, the ideal state for the renderer is t
 - ❓Renderer performs camera frustum culling & sorting
 
 **Possible alternatives:**
- - ❓Camera frustum culling & sorting is performed on engine side & fully sorted list of “render commands / draw calls” is submitted to the renderer for each camera / view
+ - 🗨(⚠️/✅?)Camera frustum culling & sorting is performed on engine side & fully sorted list of “render commands / draw calls” is submitted to the renderer for each camera / view
+   - 📖Frustrum culling and sorting are renderer side but I cannot determine the last bit myself. 
 
 **Not viable:**
  - Individual drawcalls and render commands are proxied from the main process
@@ -249,9 +279,9 @@ Since FrooxEngine has its own scene model, the ideal state for the renderer is t
 ### Textures
 **Required:**
 - Texture types
-	- ❓2D
-	- ❓Cubemap
-	- ❓3D
+	- ✅2D
+	- ✅Cubemap
+	- ✅3D
 - ❓API to upload arbitrary texture data to the GPU provided in a byte buffer
 	- ❓Support for uploading texture sub-regions
 	- ❓Support for specifying max mip level to currently use
@@ -264,6 +294,7 @@ Since FrooxEngine has its own scene model, the ideal state for the renderer is t
 - ❓Uploads can be fully done from background threads - engine takes care of any necessary synchronization
 
 ### Meshes
+- 📖/🗨️ [Mesh documentation](https://ogrecave.github.io/ogre-next/api/latest/class_ogre_1_1_mesh.html#details) is big and overwhelming. I dunno how to sort through it and need a little bit of help!
 **Required:**
 - Supported vertex attributes
 	- ❓Positions
@@ -276,7 +307,8 @@ Since FrooxEngine has its own scene model, the ideal state for the renderer is t
 - Supported topologies
 	- ❓Triangles
 	- ❓Points
-- ❓Skinned mesh data
+- 🗨(⚠️/✅?)Skinned mesh data
+	- 📖[Documentation](https://ogrecave.github.io/ogre-next/api/latest/class_ogre_1_1_mesh.html#details) for meshes discusses adding bone weights and setting a skeleton. Unsure how much of this is supported.
 	- ❓Support binding 1-4 bone transforms to each vertex
 	- ❓Support blendshape data in some form
 		- ❓Positions, normals, tangents
