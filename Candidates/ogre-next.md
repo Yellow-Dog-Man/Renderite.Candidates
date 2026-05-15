@@ -1,26 +1,45 @@
 # OGRE-Next
 **Repository:** https://github.com/OGRECave/ogre-next
 
-**License:** MIT
+**License:** 
+
+- ✅MIT
 
 ## Basic Overview
-**Programming language(s):** C++/C
+**Programming language(s):** 
+
+- ⚠️C/C++
 
 **Shading language(s):** HLMS (Compiles to GLSL, HLSL, MSL, SPIR-v)
 
-**Rendering paths:** LIST OF SUPPORTED RENDERING PATHS
+**Rendering paths:** 
 
-**Graphics API's:** Vulkan, Metal, OpenGL 3.3+, DirectX 11
+- ✅Clustered Forward
 
-**Supported platforms:** Windows 7+, Linux, macOS, iOS, Android
+**Graphics API's:** 
+
+- ✅Vulkan
+- ✅Metal
+- ✅OpenGL 3.3+
+- ⚠️ DirectX 11
+
+**Supported platforms:** 
+- ✅Windows 7+
+- ✅Linux
+- ✅macOS
+- ✅iOS
+- ✅Android
 
 **Oldest supported hardware:** ❓
 
-**VR API's:** OpenVR
+**VR API's:** 
+- ⚠️OpenVR
+  - 📖Single-pass stereo is supported and in the codebase separated from the OpenVR implementation; so, it wouldn't be the most difficultest task ever made to build OpenXR support using the existing OpenVR support as reference. It would just... be a pain.
 
 **Activity:**
 - Rough contributor count: 186
 - Rough user/community size: ❓
+  - 📖It's a bit difficult to gauge this one, since usage is diffuse as a long-life project. There is a [forum](https://forums.ogre3d.org/viewforum.php?f=25) that doesn't have a clear user count and a [Gitter (Matrix room)](https://matrix.to/#/#OGRECave_ogre-next:gitter.im) that has 28 members. It is mentioned commonly online in gamedev subreddits and will have others out there that know how to use it, but it's not a huge one.
 
 # Existing usage / projects made with this
 Several examples are included on the OGRE-Next repository; highest profile is [Yoy Simulators](https://www.yoy.cl/), a commercial VR simulator integrator.
@@ -61,29 +80,35 @@ This is the "meat" of the evaluation - going through our list of requirements an
 - ❓Ability to control the order of rendering and sorting
 		- ❓ **Ideal:** Ability to create a “group/batch” of render entities that are rendered at once as an unit and have their own internal sorting order
 
-- ❓ Stencil buffer support
+- 🗨Stencil buffer support
 	- Supported operations must match the currently exposed ones through materials
-		- ❓8 byte integer (0 to 255)
-		- ❓Comparison modes:
+		- ✅8 byte integer (0 to 255)
+		- 🗨Comparison modes:
 			- ❓Disabled
-			- ❓Never
-			- ❓Less
-			- ❓Equal
-			- ❓LessOrEqual
-			- ❓Greater
-			- ❓NotEqual
-			- ❓GreaterOrEqual
-			- ❓Always
-		- ❓Stencil Operations
-			- ❓Keep
-			- ❓Zero
-			- ❓Replace
-			- ❓IncrementSaturate
-			- ❓DecrementSaturate
-			- ❓Invert
-			- ❓IncrementWrap
-			- ❓DecrementWrap
-		- ❓Read & Write masks
+			- ✅Never
+              - 📖Called "CMPF_ALWAYS_FAIL" 
+			- ✅Less
+			- ✅Equal
+			- ✅LessOrEqual
+               - 📖Called "CMPF_LESS_EQUAL" 
+			- ✅Greater
+			- ✅NotEqual
+			- ✅GreaterOrEqual
+               - 📖Called "CMPF_GREATER_EQUAL" 
+			- ✅Always
+              - 📖Called "CMPF_ALWAYS_PASS" 
+		- ✅Stencil Operations
+			- ✅Keep
+			- ✅Zero
+			- ✅Replace
+			- ✅IncrementSaturate
+              - 📖Just called "Increment" in documentation.
+			- ✅DecrementSaturate
+              - 📖Just called "Decrement" in documentation.
+			- ✅Invert
+			- ✅IncrementWrap
+			- ✅DecrementWrap
+		- ✅Read & Write masks
 - ❓LOD support
 	- ❓Per-render switching between render entities depending on relative size on the screen
 	- ❓Ideally blending support (e.g. through material/shader properties)
