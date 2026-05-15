@@ -21,7 +21,7 @@
 - ✅Vulkan
 - ✅Metal
 - 🛑DirectX 12
-  - 📖Has DirectX 11 but no 12.
+  - 📖Has DirectX 11 but no 12. [An issue is open on the repo, but there's no word on whether this is planned or not.](https://github.com/OGRECave/ogre-next/issues/561)
 - 📖OpenGL 3.3+ is supported, but since Vulkan is supported this is probably not be relevant. 
 
 **Supported platforms:** 
