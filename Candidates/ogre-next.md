@@ -72,6 +72,14 @@ This is the "meat" of the evaluation - going through our list of requirements an
 **Ideal:**
 - ✅Single-pass stereo rendering
 - ❓Canted displays rendering support (e.g. Pimax)
+  - 📖The following blog post provides context pointing to this being potentially supported but, at the time, untested. It will need to be tested to confirm.
+
+    https://www.ogre3d.org/2019/09/22/improvements-in-vr-morph-animations-moving-to-github-and-ci#more-4235
+
+    > Currently we only tested this feature with Oculus and Vive headsets, which only shift the camera translation between eyes; but there are headsets such as the Pimax 5k+ and StarVR with large FOVs that may require also rotating the camera.
+    
+    > While our instanced stereo code might work with it and has been designed to support rotation, we couldn’t test it, and in some cases it may not be possible to fully support it due to the very nature of FOVs larger than 180°.
+
 - ❓Foveated rendering support
 
 ## Render pipeline
