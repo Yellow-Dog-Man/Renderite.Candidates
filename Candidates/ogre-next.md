@@ -79,7 +79,7 @@ This is the "meat" of the evaluation - going through our list of requirements an
 - ❓General performance on par or better with current Unity renderer
 - ❓Some level of control over graphics pipeline rendering
 - ❓Ability to control the order of rendering and sorting
-		- ❓ **Ideal:** Ability to create a “group/batch” of render entities that are rendered at once as an unit and have their own internal sorting order
+  - ❓ **Ideal:** Ability to create a “group/batch” of render entities that are rendered at once as an unit and have their own internal sorting order
 
 - 🗨Stencil buffer support
 	- Supported operations must match the currently exposed ones through materials
@@ -116,6 +116,9 @@ This is the "meat" of the evaluation - going through our list of requirements an
 - ✅Some form of Global Illumination (GI) support
   -📖 Actually quite extensive here - [dedicated documentation, parallax-corrected cubemaps, per-pixel PCC, irradiance volume, voxel cone tracing. cascaded image voxel cone tracing, irradiance field with depth, and instant radiosity are supported](https://ogrecave.github.io/ogre-next/api/latest/_gi_methods.html#GiPCC) 
 - ❓ GPU instancing
+    - 📖Information confirming GPU instancing was available in [OGRE-Next 2.3 documentation](https://ogrecave.github.io/ogre-next/api/2.3/instancing.html), but notes the following. It has been removed in future versions of the documentation.
+	
+	  > this section has become almost irrelevant as 2.1 can auto instance meshes automatically; and apply instancing even if the meshes are using different materials. The InstanceManager can only beat the Hlms if you have a very, very large number of instances (>50k objects) with the same mesh and same material, which isn't very common. If you're working on Ogre 2.1; you can skip this section.
 	- ❓ Ideally fully automated from the render entities
 	- ❓ Efficiently render large number of entities with the same material & mesh
 	- ❓ Should have some form of support for varying material properties (e.g. fetching them from a buffer)
