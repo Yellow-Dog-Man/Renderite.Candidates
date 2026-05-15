@@ -20,8 +20,9 @@
 
 - ✅Vulkan
 - ✅Metal
-- ✅OpenGL 3.3+
-- ⚠️ DirectX 11
+- 🛑DirectX 12
+  - 📖Has DirectX 11 but no 12.
+- 📖OpenGL 3.3+ is supported, but since Vulkan is supported this is probably not be relevant. 
 
 **Supported platforms:** 
 - ✅Windows 7+
