@@ -10,12 +10,12 @@
 
 - ⚠️C/C++
 
-**Shading language(s):** LIST OF SUPPORTED SHADING LANGUAGES
+**Shading language(s):** ❓
 
 **Rendering paths:**
 
 - 🗨️Forward++
-  - They mention this a lot and it's a bit unclear what it means. It seems to be 3D tiled like clustered forward, but needs more research.
+  - 📖They mention this a lot and it's a bit unclear what it means. It seems to be 3D tiled like clustered forward, but needs more research.
 
 **Graphics API's:**
 
