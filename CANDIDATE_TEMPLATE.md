@@ -3,9 +3,6 @@
 
 **License:** LICENSE
 
-## AI Use
-How AI is actually used in the project, whether AI contributions are allowed, and whether the renderer is human-designed or vibe-coded without technical oversight.
-
 ## Basic Overview
 **Programming language(s):** LIST OF PROGRAMMING LANGUAGES
 
@@ -24,6 +21,9 @@ How AI is actually used in the project, whether AI contributions are allowed, an
 **Activity:**
 - Rough contributor count: ❓
 - Rough user/community size: ❓
+
+## AI Use
+How AI is actually used in the project, whether AI contributions are allowed, and whether the renderer is human-designed or vibe-coded without technical oversight.
 
 # Existing usage / projects made with this
 Any high profile (or low profile if they're particularly relevant) projects and companies using this project. Include links and any notes that are important.
