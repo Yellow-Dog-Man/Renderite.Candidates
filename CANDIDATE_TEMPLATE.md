@@ -3,6 +3,9 @@
 
 **License:** LICENSE
 
+## AI Use
+How AI is actually used in the project, whether AI contributions are allowed, and whether the renderer is human-designed or vibe-coded without technical oversight.
+
 ## Basic Overview
 **Programming language(s):** LIST OF PROGRAMMING LANGUAGES
 
