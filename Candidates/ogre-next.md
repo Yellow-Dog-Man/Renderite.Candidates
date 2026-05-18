@@ -42,6 +42,9 @@
 - Rough user/community size: ❓
   - 📖It's a bit difficult to gauge this one, since usage is diffuse as a long-life project. There is a [forum](https://forums.ogre3d.org/viewforum.php?f=25) that doesn't have a clear user count and a [Gitter (Matrix room)](https://matrix.to/#/#OGRECave_ogre-next:gitter.im) that has 28 members. It is mentioned commonly online in gamedev subreddits and will have others out there that know how to use it, but it's not a huge one.
 
+## AI Use
+How AI is actually used in the project, whether AI contributions are allowed, and whether the renderer is human-designed or vibe-coded without technical oversight.
+
 # Existing usage / projects made with this
 Several examples are included on the OGRE-Next repository; highest profile is [Yoy Simulators](https://www.yoy.cl/), a commercial VR simulator integrator.
 

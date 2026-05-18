@@ -44,6 +44,9 @@
 - Rough contributor count: 📖8 main contributors, many small PRs (~150 PRs, unknown how many are duplicate contributors)
 - Rough user/community size: 📖VERY large - this is a framework that has been implemented in several AAA titles. However, the Discord is behind an approval gate, and I have never been able to get access, so I don't know if they're just very picky and only let a select amount of developers in.
 
+## AI Use
+How AI is actually used in the project, whether AI contributions are allowed, and whether the renderer is human-designed or vibe-coded without technical oversight.
+
 # Existing usage / projects made with this
 The Forge has been implemented in a large amount of AAA releases. These include, but are not limited to:
 
