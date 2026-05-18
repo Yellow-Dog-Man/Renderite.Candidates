@@ -353,28 +353,30 @@ Since the renderer will be providing the user a window and interfacing with some
 
 If these are not supported, they should be trivial to implement in Phase 3.
 
+- 📖Input not handled in any way by OGRE-Next. It is recommended by the community to use SDL, and this is what is used in examples.
+
 **Required:**
-- ❓Keyboard support (including Unicode)
-     - ❓Individual key press events
-     - ❓Type delta
-     - ❓IME composition
-- ❓Mouse support
-     - ❓At least 5 mouse buttons
-     - ❓Scroll wheel (including horizontal ones)
-     - ❓Absolute position
-     - ❓Relative delta
-- ❓VR input support
-     - ❓Access state of all controller buttons/elements
-     - ❓Haptics support
-     - ❓Access to full skeleton of the hand (for supported controllers)
-- ❓Touch support
-     - ❓Multi-touch
-     - ❓Ideally have access to other properties like pressure
+- 🛑Keyboard support (including Unicode)
+     - 🛑Individual key press events
+     - 🛑Type delta
+     - 🛑IME composition
+- 🛑Mouse support
+     - 🛑At least 5 mouse buttons
+     - 🛑Scroll wheel (including horizontal ones)
+     - 🛑Absolute position
+     - 🛑Relative delta
+- 🛑VR input support
+     - 🛑Access state of all controller buttons/elements
+     - 🛑Haptics support
+     - 🛑Access to full skeleton of the hand (for supported controllers)
+- 🛑Touch support
+     - 🛑Multi-touch
+     - 🛑Ideally have access to other properties like pressure
 
 **Nice to have:**
-- ❓Gamepad support
-- ❓Pen/Stylus support
-     - ❓Pressure, tilt etc...
+- 🛑Gamepad support
+- 🛑Pen/Stylus support
+     - 🛑Pressure, tilt etc...
 
 ## Other "nice to have"
 - ❓Spout support
