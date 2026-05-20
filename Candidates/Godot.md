@@ -107,7 +107,7 @@ This section compares Godot against the renderer requirements.
 - ✅ Canted displays rendering support (e.g. Pimax)
   - 📖 XR interfaces expose per-view projections, so asymmetric/canted-eye projections are representable.
 - ⚠️ Foveated rendering support
-  - 📖 XR VRS helpers and OpenXR foveation-related extensions exist, but availability depends on backend, hardware, and XR runtime support.
+  - 📖 XR VRS helpers and OpenXR foveation-related extensions exist, but availability depends on backend, hardware, and XR runtime support, using extensions known supported by SteamVR and Meta Quest (Mobile only).
 
 ## Render pipeline
 **Required:**
@@ -328,8 +328,8 @@ These requirements are on top of standard mesh rendering.
 Since FrooxEngine has its own scene model, the ideal state for the renderer is to be minimalistic and hold only data absolutely necessary for the rendering itself. If needed, we can have our own code to hold this data on top of the renderer if it doesn’t naturally hold it between frames.
 
 **Required:**
-- ✅ Mechanism to filter which entities are rendered for each camera
-  - 📖 Cameras and reflection probes use cull masks against `VisualInstance3D` layers.
+- ⚠️ Mechanism to filter which entities are rendered for each camera
+  - 📖 Cameras and reflection probes use cull masks against `VisualInstance3D` layers. Cull masks are limited in number.
 
 **Ideal:**
 - ⚠️ Flat scene description with no transform hierarchy - we submit 4x4 matrices for each entity to be rendered
