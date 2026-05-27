@@ -389,7 +389,7 @@ This will most likely have to be implemented - e.g. through doing integration wi
 - ✅ Support for both local file playback & streaming
   - 📖 Local paths and URI sources are passed to GStreamer `playbin3`; codec and protocol coverage depends on installed GStreamer plugins.
   - ✅ Streaming video files from a web endpoint
-  - ⚠️ Supporting live video streams (like rtmp)
+  - ✅ Supporting live video streams (like rtmp)
     - 📖 Live/protocol support depends on the available GStreamer plugin set.
 
 **Ideal:**
