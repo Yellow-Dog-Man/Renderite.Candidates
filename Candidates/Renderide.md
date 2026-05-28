@@ -8,73 +8,80 @@
 - ✅ Rust
   - 📖 Primary renderer implementation.
 - ✅ C#
-  - 📖 Shared IPC type generation only.
+  - 📖 Shared IPC type generation and generator tests.
 
 **Shading language(s):**
 - ✅ WGSL
-  - 📖 Primary shader language.
-- 🗨 Naga / Naga Oil
-  - 📖 Used for WGSL composition, reflection, and validation in the renderer build pipeline.
-- 🛑 Direct GLSL shader authoring
-  - 📖 Can be added but is not currently exposed/planned.
-- 🛑 Direct SPIR-V shader authoring
-  - 📖 Can be added but is not currently exposed/planned.
+  - 📖 Primary shader language. This is an acceptable common shading language under the requirements.
+- ✅ Naga / Naga Oil
+  - 📖 Not a shading language target; used for WGSL composition, reflection, and validation in the renderer build pipeline.
+- 🔜 Direct GLSL shader authoring
+  - 📖 Can be added but is not currently exposed.
+- 🔜 Direct SPIR-V shader authoring
+  - 📖 Can be added but is not currently exposed.
 - 🛑 Slang
+  - 📖 Slang is not part of the current shader path; WGSL and Naga are the active pipeline. Slang does not currently support multiview (single-pass stereo) wgsl behavior.
 
 **Rendering paths:**
 - ✅ Clustered forward
 
 **Graphics API's:**
 - ✅ wgpu
+  - 📖 The renderer is built on wgpu, which abstracts the underlying graphics API.
   - ✅ Vulkan
+    - 📖 OpenXR startup currently uses Vulkan regardless of the configured desktop graphics API.
   - ✅ Metal
+    - 📖 Acceptable macOS/iOS-family target through wgpu.
   - ✅ DirectX 12
+    - 📖 Acceptable Windows target through wgpu.
   - ✅ OpenGL
+    - 📖 Available as a desktop fallback backend.
 
 **Supported platforms:**
 - ✅ Windows
+  - 📖 Native support.
 - ✅ MacOS
   - 📖 Native support.
 - ✅ Linux
   - 📖 Native support.
 - 🔜 iOS / Android
-  - 📖 Mobile would generally require single-process support from the engine.
+  - 📖 Mobile support remains a future direction; the codebase avoids hard dependencies on desktop-only APIs where portable alternatives exist.
 
 **Oldest supported hardware:**
 - 🗨 Tested with GTX 1080 Ti and newer
-  - 📖 Theoretically should work on GTX 600 or newer
+  - 📖 Requires a GPU with a wgpu-supported desktop backend: Vulkan, Metal, DirectX 12, or OpenGL fallback. Tested on GTX 1080 Ti and newer, with GTX 600-class hardware as a theoretical lower bound.
 
 **VR API's:**
 - ✅ OpenXR
 
 **Activity:**
-- Rough contributor count: ✅ 15 human contributors / 16 total local git authors
-- Rough user/community size: 52 stars
+- Rough contributor count: Small human-led contributor base
+  - 📖 The renderer includes 16 contributors, with DoubleStyx as the primary developer/maintainer.
+- Rough user/community size: Small public community of users
+  - 📖 60 stars.
 
 ## AI Use
-How AI is actually used in the project, whether AI contributions are allowed, and whether the renderer is human-designed or vibe-coded without technical oversight.
-
-- The README AI Policy states that Renderide does not accept AI-generated or AI-assisted source code, shaders, documentation, tests, issues, pull requests, or review comments.
+- Renderide is a human-authored renderer. The README AI Policy states that Renderide does not accept AI-generated or AI-assisted source code, shaders, documentation, tests, issues, pull requests, or review comments.
 
 # Existing usage / projects made with this
-Any high profile (or low profile if they're particularly relevant) projects and companies using this project. Include links and any notes that are important.
-
-- N/A - designed directly for interfacing with FrooxEngine and Resonite content requirements.
+- Designed directly for interfacing with FrooxEngine and Resonite content requirements.
 
 # General notes
-Anything noteworthy that's not related to the any of the requirements directly should be added to this section.
 
 ## Positive highlights
 - Tailor-made for Resonite compatibility.
 - OpenXR-first architecture with stereo multiview and head-tracked input in the core path.
 - Data-driven render graph and material pipeline.
+- Linux, macOS, and Windows are tier-1 CI targets.
 - Tracy CPU/GPU profiling feature is built in behind an opt-in Cargo feature.
 
 ## Potential concerns
+- The README describes the project as experimental, with performance, stability, and platform support still evolving.
 - Needs additional testing on a broad range of content to verify correctness.
 
 ## Other notes
 - Engineered around existing content compatibility and needs a mechanism for evaluating currently engine-unsupported features like light probes. This could be prototyped using the CI software runners via the `renderide-test` crate.
+- A `renderide-git` AUR package exists for Arch-based Linux users.
 
 
 # New Renderer Requirements
@@ -90,6 +97,7 @@ This is the "meat" of the evaluation - going through our list of requirements an
 ## VR Rendering
 **Required:**
 - ✅ Allow implementation of dynamic VR/desktop switching
+  - 📖 Runtime view planning has separate desktop, HMD, and secondary-camera render modes.
 
 **Ideal:**
 - ✅ Single-pass stereo rendering
@@ -102,9 +110,11 @@ This is the "meat" of the evaluation - going through our list of requirements an
 ## Render pipeline
 **Required:**
 - 🗨 General performance on par or better with current Unity renderer
-  - 📖 Generally better but varies on hardware and content. More optimizations are being added over time.
+  - 📖 The renderer has allocation-conscious render graph execution, batching, and culling infrastructure.
 - ✅ Some level of control over graphics pipeline rendering
+  - 📖 Render graph phases and material routing are explicit. Gaussian splat upload IPC is currently consumed as placeholder metadata; the render path for splats remains future work.
 - ✅ Ability to control the order of rendering and sorting
+  - 📖 World-mesh draw preparation tracks Unity-style render queue, sorting order, transparent ordering, and material batch groups.
   - ✅ **Ideal:** Ability to create a "group/batch" of render entities that are rendered at once as an unit and have their own internal sorting order
 
 - ✅ Stencil buffer support
@@ -130,9 +140,11 @@ This is the "meat" of the evaluation - going through our list of requirements an
       - ✅ IncrementWrap
       - ✅ DecrementWrap
     - ✅ Read & Write masks
-- 🔜 LOD support
-  - 🔜 Per-render switching between render entities depending on relative size on the screen
-  - c Ideally blending support (e.g. through material/shader properties)
+- ⚠️ LOD support
+  - ✅ Per-render switching between render entities depending on relative size on the screen
+    - 📖 LOD groups mirror host state and select mesh-swap renderers by screen-relative transition height, with per-render-path mesh LOD bias.
+  - 🔜 Ideally blending support (e.g. through material/shader properties)
+    - 📖 Fade and cross-fade state is stored for parity, but blending remains future work.
 - ✅ Some form of Global Illumination (GI) support
   - 📖 Specular IBL/reflection-probe lighting is present.
   - 📖 Ambient SH2 is supported with an optional experimental feature for reflection probe SH2 blending.
@@ -140,8 +152,8 @@ This is the "meat" of the evaluation - going through our list of requirements an
   - ✅ Ideally fully automated from the render entities
   - ✅ Efficiently render large number of entities with the same material & mesh
   - ✅ Should have some form of support for varying material properties (e.g. fetching them from a buffer)
-- 🔜 Mirror/Portal rendering
-  - 📖 Offscreen render-texture cameras are implemented, but dedicated mirror behavior is in progress.
+- ⚠️ Mirror/Portal rendering
+  - 📖 Offscreen render-texture cameras are implemented, but dedicated mirror/portal skew, clip, and stencil behavior are in progress.
   - 🔜 Ideally should be as efficient as possible for VR - use single pass rather than two separate renders
   - 🔜 More flexible on render method
     - 🔜 Skewed matrix with render to texture (current method)
@@ -149,11 +161,15 @@ This is the "meat" of the evaluation - going through our list of requirements an
 
 **Ideal:**
 - 🔜 HDR display output
-  - 📖 HDR scene color and tonemapping exist, but HDR swapchain/display output is in progress.
-- 🔜 Multiple Window support
-- 🔜 Mesh shaders (with meshlets) pipeline
-  - 🔜 Provide fallback for older GPU's
+  - 📖 HDR scene color and tonemapping exist; swapchain/display output remains SDR-oriented.
+- ⚠️ Multiple Window support
+  - 📖 The renderer owns one desktop window/swapchain. Multiple offscreen render-texture views are supported, but multiple OS windows require app/window-target updates.
+- 🛑 Mesh shaders (with meshlets) pipeline
+  - 📖 Current rendering uses conventional vertex/fragment raster pipelines with compute preprocessing; meshlet/mesh-shader support would be a new path.
+  - 📖 Not strictly planned unless there is a good reason to switch to them. They limit hardware targets and require fallbacks.
+  - ✅ Provide fallback for older GPU's
 - ✅ Better alpha sorting/blending handling
+  - 📖 Transparent draws use render queue, sorting order, class-aware back-to-front ordering, and relaxed batching for commutative blend classes.
 
 **Nice to have:**
 - ✅ Forms of static / dynamic occlusion culling
@@ -165,18 +181,18 @@ This is the "meat" of the evaluation - going through our list of requirements an
 
 ## Shader pipeline
 **Required:**
-- ✅ Shader pipeline must be isolated enough (or made to be isolated) so it can be invoked from our own code at runtime to dynamically compile shaders
+- ⚠️ Shader pipeline must be isolated enough (or made to be isolated) so it can be invoked from our own code at runtime to dynamically compile shaders
   - 📖 WGSL material reflection, permutation, and pipeline caching are isolated in the material system, but this is currently for embedded/composed WGSL rather than an exposed arbitrary runtime shader API.
-  - 📖 An arbitrary shader API is in progress.
+  - 🔜 An arbitrary shader API remains future work.
 - ✅ Compute Shader support
   - 🔜 Needs to support wave intrinsics
+    - 📖 Compute passes are used for mesh deformation, occlusion, post processing, and IBL work; portable wave-intrinsic exposure depends on wgpu/WGSL support.
 
 **Ideal:**
 - 🛑 Slang support
-  - 📖 Slang does not support `MULTIVIEW` for wgsl yet; wgsl already cross-compiles to different backends
-    - 📖 The MULTIVIEW keyword could possibly be injected as a post-step in the emission, but this could be more complex.
-- 🛑 SPIR-V
-  - 📖 Can be added but is not currently exposed/planned.
+  - 📖 Slang is not part of the current shader path. WGSL/Naga is the active pipeline; Slang/WGSL multiview support would require additional integration work.
+- 🔜 SPIR-V
+  - 📖 Can be added but is not currently exposed.
 - ✅ Existing PBR/PBS shaders
 
 ## Post processing
@@ -185,13 +201,13 @@ To match feature parity, the rendering pipeline needs to support the same/simila
 **Required:**
 - ✅ Bloom
   - ✅ Must support working with HDR values (above 1.0)
-- 🔜 Motion Blur
+- ⚠️ Motion Blur
   - ✅ Motion vector based
   - ✅ Support camera blur
   - 🔜 Support object blur
   - 🔜 Support skinned mesh blur
   - ✅ Ideally supported both in VR & desktop, but desktop is sufficient
-    - 📖 The shader has mono and multiview variants, and the config exposes a VR allow toggle.
+    - 📖 Screen-space HDR motion blur has mono and multiview shaders and a VR allow toggle. Current vectors are depth/camera-derived.
 - ✅ Ambient Occlusion
   - 📖 GTAO is implemented.
 - ✅ Anti-aliasing
@@ -200,7 +216,9 @@ To match feature parity, the rendering pipeline needs to support the same/simila
 
 **Nice to have:**
 - 🔜 Screen space reflections
+  - 📖 Camera state carries the SSR flag, but the active post-processing chain does not include an SSR pass yet.
 - 🔜 Some form of screen space realtime GI
+  - 📖 Current realtime indirect lighting is probe/SH2-oriented rather than a screen-space GI pass.
 
 **Not required:**
   - 🔜 Anti-aliasing (these are largely needed for deferred rendering)
@@ -219,12 +237,12 @@ Note that the structure does not need to match the current ones, but the engine 
 - ✅ Point topology
 - ✅ Some form of submesh support
   - ✅ Allow specifying materials for each submesh - the whole mesh is rendered & culled as a unit, but each submesh is its own
-- 🔜 Shadow rendering support (depending on material support)
-  - 🔜 Single sided
-  - 🔜 Dual sided
-  - 🔜 None
-  - 🔜 Shadow only
-    - 📖 Shadow-only renderers are represented/skipped for color draws, but shadow-map rendering passes are in progress.
+- ⚠️ Shadow rendering support (depending on material support)
+  - ⚠️ Single sided
+  - ⚠️ Dual sided
+  - ✅ None
+  - ⚠️ Shadow only
+    - 📖 Shadow cast modes and shadow-only renderers are represented, and color draws skip shadow-only renderers. Material depth-only and shadow-caster proxy paths exist, while realtime shadow-map rendering passes remain in progress.
 
 ### Skinned Mesh Rendering
 These requirements are on top of standard mesh rendering.
@@ -238,9 +256,11 @@ These requirements are on top of standard mesh rendering.
   - 📖 Implemented with compute passes for skinning/blendshape deform.
 
 **Nice to have:**
-- 🔜 More than 4 bones
+- ⚠️ More than 4 bones
+  - 📖 Variable-count host bone streams are accepted, but GPU skinning keeps the strongest four influences per vertex and renormalizes them.
 - ✅ Blendshape support
   - 🔜 UV's, Colors
+    - 📖 Sparse blendshape data currently covers positions, normals, and tangents.
   - ✅ Ability to cache rarely changing blendshapes to avoid recomputations
   - ✅ Ability to only compute affected vertices & skip rest
 - 🔜 Dual Quaternion Skinning #487
@@ -253,24 +273,30 @@ These requirements are on top of standard mesh rendering.
   - ✅ Directional
 - Supported features:
   - 🔜 Hard & Soft realtime shadows for for all types
+    - 📖 Light shadow type, strength, bias, and shadow-map resolution are mirrored into scene/GPU light data; realtime shadow-map rendering remains in progress.
   - ✅ Multiple instances of each type
-  - 🔜 Light cookies for point & spot lights
+  - ✅ Light cookies for point & spot lights
+    - 📖 Light cookie atlas support handles point, spot, and directional cookies with 2D and point-cookie atlas paths.
 - 🔜 Control over lighting falloff
   - 📖 Unity-style point/spot attenuation is implemented, but arbitrary falloff control is in progress.
 
 **Nice to have:**
-- 🔜 RGB light cookies
+- ⚠️ RGB light cookies
+  - 📖 Cookie atlases use scalar channels selected from source textures; full RGB cookie color remains future work.
+  - 📖 Not planned yet as this would require datamodel changes.
 - 🔜 Baked shadowmaps
 - 🔜 Control over realtime shadowmap rendering
   - 🔜 Ideally the pipeline could render point/spot light shadowmaps once each frame and share them for each camera/view that’s rendered that frame
-- 🔜 Realtime area/polygonal lights
-
+- ⚠️ Realtime area/polygonal lights
+  - 📖 Not planned as this requires datamodel changes so the host is explicit about what meshes behave as polygonal light sources.
 ### Cameras
 **Required:**
 - ✅ Support rendering additional views (other than primary view) into a render texture
+  - 📖 Secondary render-texture cameras are collected, depth-sorted, and rendered as independent offscreen views.
 - ⚠️ Double buffering support (cameras see the contents of their own render texture from previous frame)
   - 📖 The render-texture path avoids same-pass self-sampling, but explicit camera self-history behavior is in progress as a full double-buffer feature.
 - ✅ Support camera stacking with render order (depth)
+  - 📖 Secondary cameras are sorted by camera depth and may target the same render texture.
   - ✅ Multiple cameras must be able to render into the same texture
   - ✅ Order must be able to be defined (e.g. with depth value)
   - ✅ Must support viewport configuration (rendering to a sub-section of the render texture)
@@ -294,9 +320,11 @@ Since FrooxEngine has its own scene model, the ideal state for the renderer is t
 - ✅ Mechanism to filter which entities are rendered for each camera
 
 **Ideal:**
-- 🗨 Flat scene description with no transform hierarchy - we submit 4x4 matrices for each entity to be rendered
+- ⚠️ Flat scene description with no transform hierarchy - we submit 4x4 matrices for each entity to be rendered
   - 📖 Renderide holds scene-layer transform/render-space state, but renderer-side draw planning uses submitted transform data.
-- 🗨 Submitted poses are in world space and can be shared between multiple cameras/views
+  - 📖 This cannot be changed without changing the host-side IPC.
+- ⚠️ Submitted poses are in world space and can be shared between multiple cameras/views
+  - 📖 The renderer derives per-context world matrices from mirrored host transforms; draw extraction then shares those results across the planned views.
 - ✅ Renderer performs camera frustum culling & sorting
 
 **Possible alternatives:**
@@ -322,9 +350,11 @@ Since FrooxEngine has its own scene model, the ideal state for the renderer is t
 - ✅ Support for common compressed formats (depending on HW)
   - ✅ Uncompressed formats (e.g. RGBA32/ARGB32)
   - ✅ Block compressed formats (BCx, ETCx, ASTC...)
+    - 📖 BC and ETC2 use native GPU formats when the device exposes the required features. ASTC routes through the RGBA8 decode path.
 
 **Ideal:**
 - ✅ Uploads can be fully done from background threads - engine takes care of any necessary synchronization
+  - 📖 Upload commands are queued over IPC and integrated through cooperative renderer tasks with GPU queue gating. Final GPU writes are synchronized inside the renderer.
 
 ### Meshes
 **Required:**
@@ -352,13 +382,15 @@ This will most likely have to be implemented - e.g. through doing integration wi
 
 **Required:**
 - ✅ Video texture support integrated with the rendering pipeline
-  - 📖 Implemented behind the opt-in `video-textures` feature using GStreamer. Stock builds allocate a black GPU placeholder without decoding.
+  - 📖 Implemented behind the opt-in `video-textures` feature using GStreamer.
   - ✅ Ability to control the playback (playing, looping, playback position)
   - ✅ Ability to select audio track that’s decoded
 - ✅ Ability to get raw audio data
 - ✅ Support for both local file playback & streaming
+  - 📖 Local paths and URI sources are passed to GStreamer `playbin3`; codec and protocol coverage depends on installed GStreamer plugins.
   - ✅ Streaming video files from a web endpoint
   - ✅ Supporting live video streams (like rtmp)
+    - 📖 Live/protocol support depends on the available GStreamer plugin set.
 
 **Ideal:**
 - 🛑 Ideally libVLC integration for maximum compatibility
@@ -376,7 +408,8 @@ If these are not supported, they should be trivial to implement in Phase 3.
 - ✅ Keyboard support (including Unicode)
   - ✅ Individual key press events
   - ✅ Type delta
-  - ✅ IME composition
+  - ⚠️ IME composition
+    - 📖 Committed IME text is forwarded; preedit/composition state is not proxied separately.
 - ✅ Mouse support
   - ✅ At least 5 mouse buttons
   - ✅ Scroll wheel (including horizontal ones)
@@ -385,9 +418,10 @@ If these are not supported, they should be trivial to implement in Phase 3.
 - ✅ VR input support
   - ✅ Access state of all controller buttons/elements
   - ✅ Haptics support
-  - 🔜 Access to full skeleton of the hand (for supported controllers)
-    - 📖 Hand IPC types and synthesized hands exist, but full controller skeleton tracking is in progress.
+  - ✅ Access to full skeleton of the hand (for supported controllers)
+    - 📖 OpenXR `XR_EXT_hand_tracking` is sampled when available, with synthesized controller-driven hands as fallback.
 - 🔜 Touch support
+  - 📖 Window input currently publishes mouse, keyboard, window, and VR state; touch events are not proxied yet.
   - 🔜 Multi-touch
   - 🔜 Ideally have access to other properties like pressure
 
