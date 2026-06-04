@@ -12,7 +12,7 @@
 
 **Graphics API's:** DirectX 12, Vulkan, Metal
 
-**Supported platforms:** Windows 10/11, Linux, Mac OS, iOS, Xbox Series X|S,PlayStation 5
+**Supported platforms:** Windows 10/11, Linux, Mac OS, iOS, Xbox Series X|S, PlayStation 5
 
 **Oldest supported hardware:** Unkown
 
