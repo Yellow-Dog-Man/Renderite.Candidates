@@ -33,9 +33,10 @@ https://github.com/MonoGame/MonoGame/blob/develop/CONTRIBUTING.md
 Anything noteworthy that's not related to the any of the requirements directly should be added to this section.
 
 ## Positive highlights
+MonoGame is primarily a 2D/3D game framework that is a continuation/sucessor of Microsofts XNA Framework, as such is quite flexible.  
 
 ## Potential concerns
-
+ 
 ## Other notes
 
 
