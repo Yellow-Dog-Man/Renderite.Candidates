@@ -51,16 +51,21 @@ The rendering path should support large amounts of dynamic lights for all materi
 This pipeline first collects all lights currently visible in the view. During rendering, shaders access a list of lights within their area and accumulate the lighting information.
 
 **Ideal:** Clustered Forward
+
 **Acceptable:** Variants of Forward+ (should not be pure 2D binning though), potentially alternative pipelines that fit above criteria (please comment if you’re aware of any)
+
 **Not acceptable:**
 - Multi-pass Forward (each light adds additional cost)
 - Deferred (many lights supported only for specific opaque materials/shaders and has higher overhead)
 
 ## Graphics API
+
 **Ideal:** Vulkan
+
 **Acceptable:** 
 - DX12 on Windows (if abstracted well enough)
 - Metal on OS X / iOS
+
 **Not acceptable:**
 - OpenGL
 - DX11 (and lower)
@@ -93,6 +98,7 @@ This pipeline first collects all lights currently visible in the view. During re
 
 ## VR API
 **Ideal:** OpenXR
+
 **Acceptable:** OpenVR, Oculus SDK - only if OpenXR is in development and will be added later
 
 ## VR Rendering
