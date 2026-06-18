@@ -60,9 +60,14 @@
 - Rough user/community size: 🗨 Large community
 
 ## AI Use
-How AI is actually used in the project, whether AI contributions are allowed, and whether the renderer is human-designed or vibe-coded without technical oversight.
+How AI is actually used in the project, whether AI contributions are allowed, and whether the renderer is meaningfully human-designed or substantially AI-coded without technical oversight. Note that post-2021 public git history cannot reliably prove that merged code was never AI-assisted. Godot should not be described as AI-free.
 
-- ⚠️ AI use in pull requests must be disclosed.
+- Project policy
+  - Godot includes AI disclosure language in `CONTRIBUTING.md` and the pull request template. Autonomous AI agents are expected to disclose themselves, and PR AI use should include a description of how it was used.
+- Observed evidence
+  - Git history includes at least one 2025 merged PR branch with a `claude/...` branch name (`a627ee6c10`). This is a weak provenance indication by itself, but it supports treating Godot as AI-aware rather than AI-free.
+- Evaluation impact
+  - Godot is a mature, heavily reviewed engine with explicit AI disclosure controls. The evaluation should focus on maintainer review, renderer quality, and disclosure policy rather than assuming no AI-assisted contributions exist.
 
 # Existing usage / projects made with this
 Any high profile (or low profile if they're particularly relevant) projects and companies using this project. Include links and any notes that are important.

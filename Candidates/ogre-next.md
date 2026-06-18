@@ -61,7 +61,14 @@
   - 📖 Community size is difficult to measure because OGRE and OGRE-Next have a long-lived, diffuse user base. The project has an [OGRE-Next forum](https://forums.ogre3d.org/viewforum.php?f=25) and a [Matrix/Gitter room](https://matrix.to/#/#OGRECave_ogre-next:gitter.im).
 
 ## AI Use
-No project-level AI contribution policy was found. The renderer appears to be a long-running, human-designed C++ renderer with normal maintainer review.
+How AI is actually used in the project, whether AI contributions are allowed, and whether the renderer is meaningfully human-designed or substantially AI-coded without technical oversight. Note that post-2021 public git history cannot reliably prove that merged code was never AI-assisted. OGRE-Next should not be described as AI-free.
+
+- Observed evidence
+  - Git history includes 2026 commits with `Co-Authored-By: Claude ...` trailers, including formatting and renderer/utility fixes (`edd385cad0`, `998c0530c7`, `8ec6166ea3`, `e0126edeb3`).
+- Project policy
+  - No project-level AI contribution policy was found.
+- Evaluation impact
+  - OGRE-Next remains a long-running renderer with normal maintainer review, but recent history contains explicit AI co-author markers.
 
 # Existing usage / projects made with this
 The OGRE-Next README lists [Yoy Simulators](https://www.yoy.cl/), Skyline Game Engine, Racecraft, Sunset Rangers, and Stunt Rally 3 as projects using OGRE-Next. Yoy Simulators is a notable commercial VR simulator integrator.

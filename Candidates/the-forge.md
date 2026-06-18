@@ -72,7 +72,14 @@
   - 📖 VERY large - this is a framework that has been implemented in several AAA titles. However, the Discord is behind an approval gate, and I have never been able to get access, so I don't know if they're just very picky and only let a select amount of developers in.
 
 ## AI Use
-The Forge is a long-running, human-designed C/C++ graphics framework maintained by The Forge Interactive. No project AI-use policy, AI-generated contribution policy, or evidence of unreviewed AI-generated renderer work was found in the repository source.
+How AI is actually used in the project, whether AI contributions are allowed, and whether the renderer is meaningfully human-designed or substantially AI-coded without technical oversight. Note that post-2021 public git history cannot reliably prove that merged code was never AI-assisted. The Forge should not be described as provably AI-free.
+
+- Observed evidence
+  - The git history did not appear to contain concrete AI markers such as AI policy text, Claude/Copilot/ChatGPT files, AI co-author trailers, or AI-assisted test tooling.
+- Project policy
+  - No project AI-use policy or AI-generated contribution policy was found.
+- Evaluation impact
+  - The Forge is a long-running, industry-backed C/C++ graphics framework maintained by The Forge Interactive. No concrete evidence of unreviewed AI-generated renderer work was found, but absence of local markers is not proof of AI-free provenance for an active post-2021 public repository.
 
 # Existing usage / projects made with this
 The Forge has been implemented in a large amount of AAA releases. These include, but are not limited to:

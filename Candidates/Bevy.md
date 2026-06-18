@@ -23,7 +23,14 @@
 - Rough user/community size: ~46.1k GitHub stars and ~4.6k forks as of 2026-05-19; official Discord, Reddit, GitHub Discussions, Bevy Assets, and Bevy Foundation/supporter ecosystem exist.
 
 ## AI Use
-Bevy is a human-designed open source engine with an explicit AI policy. The policy rejects AI-generated code and non-code assets for Bevy Organization repositories, except trivial autocomplete-style suggestions that are indistinguishable from ordinary IDE assistance.
+How AI is actually used in the project, whether AI contributions are allowed, and whether the renderer is meaningfully human-designed or substantially AI-coded without technical oversight. Note that post-2021 public git history cannot reliably prove that merged code was never AI-assisted. Bevy should not be described as provably AI-free, even though it has one of the clearest AI contribution policies among the candidates.
+
+- Project policy
+  - Bevy has an explicit AI policy. The policy rejects AI-generated code and non-code assets for Bevy Organization repositories, except trivial autocomplete-style suggestions that are indistinguishable from ordinary IDE assistance.
+- Observed evidence
+  - No concrete first-party renderer AI-workflow marker was found, but that does not prove absence of AI-assisted contributions. Bevy's policy exists because AI-generated contributions are a known maintainer burden.
+- Evaluation impact
+  - Bevy has strong policy controls against AI-generated contributions, but it is still not possible to certify every post-2021 merged line as never AI-assisted from public history alone.
 
 Source: https://bevy.org/learn/contribute/policies/ai/
 
