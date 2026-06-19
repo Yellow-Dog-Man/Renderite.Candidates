@@ -61,7 +61,14 @@
   - 📖 60 stars.
 
 ## AI Use
-- Renderide is a human-authored renderer. The README AI Policy states that Renderide does not accept AI-generated or AI-assisted source code, shaders, documentation, tests, issues, pull requests, or review comments.
+How AI is actually used in the project, whether AI contributions are allowed, and whether the renderer is meaningfully human-designed or substantially AI-coded without technical oversight. Note that post-2021 public git history cannot reliably prove that merged code was never AI-assisted. Renderide should not be described as AI-free across its full history.
+
+- Project policy
+  - The README AI Policy states that Renderide does not accept AI-generated or AI-assisted source code, shaders, documentation, tests, issues, pull requests, or review comments. This policy was documented in commit `9dff34b5` on 2026-05-17 and should be treated as forward-looking from that point.
+- Observed evidence
+  - Earlier history contains explicit AI/agent-workflow markers: `CLAUDE.md` references in commit messages (`cf72642d`, `c97cf062`), an `AGENTS.md` rule reference in `435ffb84`, temporary planning docs added in `81caf5c6` and removed in `a923c236`, and a current stale source reference to `docs/shader_permutation_strategy.md` in `crates/renderide/src/materials/shader_permutation.rs`.
+- Evaluation impact
+  - Surviving AI-generated code was rewritten by hand since the notice using git blame, though there may still be commits that were missed in the cleanup. Renderide is a human-designed renderer with AI-assistance/provenance ambiguity, not a strictly AI-free codebase.
 
 # Existing usage / projects made with this
 - Designed directly for interfacing with FrooxEngine and Resonite content requirements.

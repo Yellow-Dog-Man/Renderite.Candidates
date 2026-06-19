@@ -23,7 +23,14 @@
 - Rough user/community size: Moderate
 
 ## AI Use
-The renderer appears to be a long-running human-designed engine. No signs were found in the repo that the core renderer is vibe-coded or generated without technical oversight.
+How AI is actually used in the project, whether AI contributions are allowed, and whether the renderer is meaningfully human-designed or substantially AI-coded without technical oversight. Note that post-2021 public git history cannot reliably prove that merged code was never AI-assisted. Stride has explicit AI/tooling evidence and should not be described as AI-free.
+
+- Project policy
+  - No direct ban on AI-generated contributions was found. Instead, the repo includes guidance and tooling for AI-assisted workflows.
+- Observed evidence
+  - The repo contains `.github/copilot-instructions.md`, Claude/Anthropic screenshot-comparison fallback code and CI, a source comment noting a test header parser was generated with ChatGPT, Claude co-author trailers in 2026 commits, and history that tracked then removed `CLAUDE.md` / `.claude/`.
+- Evaluation impact
+  - Stride is a mature maintainer-reviewed engine, but AI-assisted tooling is visibly part of recent project workflow. It as reviewed/maintainer-owned code with AI provenance uncertainty, not strictly an AI-free renderer.
 
 # Existing usage / projects made with this
 The README points to community resources, demos, articles, shaders, physics examples, and the Stride Community Toolkit.
