@@ -73,6 +73,19 @@ How AI is actually used in the project, whether AI contributions are allowed, an
 # Existing usage / projects made with this
 The OGRE-Next README lists [Yoy Simulators](https://www.yoy.cl/), Skyline Game Engine, Racecraft, Sunset Rangers, and Stunt Rally 3 as projects using OGRE-Next. Yoy Simulators is a notable commercial VR simulator integrator.
 
+# Performance
+While it's difficult to gauge the performance before the actual implementation, it's valuable to gather some preliminary performance data to get a good read on how well the renderer might perform.
+
+## Benchmarks
+Ideally any existing benchmarks that compare rendering content of similar complexity against Unity (built-in rendering pipeline) or even Resonite specifically (if benchmarked by the community).
+
+❓
+
+## Future optimizations
+❓ Are there any significant optimizations in development that will improve perfomance?
+
+## Highlights / Concerns
+
 # General notes
 OGRE-Next is a mature renderer library with strong low-level rendering coverage. The main integration risk is that several systems Resonite currently receives from Unity or Renderite would need to be built around the renderer rather than configured inside it.
 
