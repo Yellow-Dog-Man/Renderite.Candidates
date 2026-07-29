@@ -72,6 +72,19 @@ How AI is actually used in the project, whether AI contributions are allowed, an
 # Existing usage / projects made with this
 Any high profile (or low profile if they're particularly relevant) projects and companies using this project. Include links and any notes that are important.
 
+# Performance
+While it's difficult to gauge the performance before the actual implementation, it's valuable to gather some preliminary performance data to get a good read on how well the renderer might perform.
+
+## Benchmarks
+Ideally any existing benchmarks that compare rendering content of similar complexity against Unity (built-in rendering pipeline) or even Resonite specifically (if benchmarked by the community).
+
+❓
+
+## Future optimizations
+❓ Are there any significant optimizations in development that will improve perfomance?
+
+## Highlights / Concerns
+
 # General notes
 Anything noteworthy that's not related to the any of the requirements directly should be added to this section.
 

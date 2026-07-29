@@ -73,6 +73,19 @@ How AI is actually used in the project, whether AI contributions are allowed, an
 # Existing usage / projects made with this
 - Designed directly for interfacing with FrooxEngine and Resonite content requirements.
 
+# Performance
+While it's difficult to gauge the performance before the actual implementation, it's valuable to gather some preliminary performance data to get a good read on how well the renderer might perform.
+
+## Benchmarks
+Ideally any existing benchmarks that compare rendering content of similar complexity against Unity (built-in rendering pipeline) or even Resonite specifically (if benchmarked by the community).
+
+❓
+
+## Future optimizations
+❓ Are there any significant optimizations in development that will improve perfomance?
+
+## Highlights / Concerns
+
 # General notes
 
 ## Positive highlights
