@@ -86,7 +86,27 @@ Ideally any existing benchmarks that compare rendering content of similar comple
 ## Highlights / Concerns
 
 # General notes
-Anything noteworthy that's not related to the any of the requirements directly should be added to this section.
+
+Godot exposes low level APIs via 'Servers' and were designed to allow components of the engine to be used independently of the scene system and in parallel. 
+Even lower level API access to the renderer is available via the [RenderingDevice](https://docs.godotengine.org/en/stable/classes/class_renderingdevice.html).
+The normal Godot scene system is built on top of these, and direct access to servers is recommended for users that cannot afford the overhead of the scene system in high performance applications.
+Extensions can even be written that provide [custom servers](https://docs.godotengine.org/en/stable/engine_details/engine_api/custom_godot_servers.html#introduction) for new engine behaviors.
+These are all accessible via the official C#/GDScript APIs.
+
+> One of the most interesting design decisions for Godot is the fact that the whole scene system is optional. While it is not possible to compile it out, it can be completely bypassed.
+>
+> At the core, Godot uses the concept of Servers. They are low-level APIs to control rendering, physics, sound, etc. The scene system is built on top of them and uses them directly.
+> ([Optimization using Servers](https://docs.godotengine.org/en/stable/tutorials/performance/using_servers.html#optimization-using-servers))
+
+The most likely servers that Resonite would interact with are:
+- [RenderingServer](https://docs.godotengine.org/en/stable/classes/class_renderingserver.html) (This can be used to access the [RenderingDevice](https://docs.godotengine.org/en/stable/classes/class_renderingdevice.html))
+- [XRServer](https://docs.godotengine.org/en/stable/classes/class_xrserver.html#xrserver)
+
+Some pages with extra background:
+- [Optimization using Servers](https://docs.godotengine.org/en/stable/tutorials/performance/using_servers.html#optimization-using-servers)
+- [Godot's architecture overview](https://docs.godotengine.org/en/latest/engine_details/architecture/godot_architecture_diagram.html#godot-s-architecture-overview)
+
+![Godot architecture diagram](https://docs.godotengine.org/en/latest/_images/godot-architecture-diagram.webp)
 
 ## Positive highlights
 - Mature full engine with a large community, permissive MIT license, and broad platform support.
