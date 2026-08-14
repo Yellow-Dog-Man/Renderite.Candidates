@@ -141,7 +141,7 @@ This is the "meat" of the evaluation - going through our list of requirements an
 **Required:**
 - 🔜Shader pipeline must be isolated enough (or made to be isolated) so it can be invoked from our own code at runtime to dynamically compile shaders
 - 🔜 Compute Shader support
-	- ❓Needs to support wave intrinsics
+	- 🔜Needs to support wave intrinsics
 
 **Ideal:**
 - 🔜 Slang support
@@ -227,7 +227,7 @@ These requirements are on top of standard mesh rendering.
 - 🗨Baked shadowmaps
 - 🗨Control over realtime shadowmap rendering
 	- 🗨Ideally the pipeline could render point/spot light shadowmaps once each frame and share them for each camera/view that’s rendered that frame
-- 🗨Realtime area/polygonal lights
+- 🔜Realtime area/polygonal lights
 
 ### Cameras
 **Required:**
