@@ -8,7 +8,7 @@
 
 **Shading language(s):** Currently Spir-v primarily but possibly up to open discussion
 
-**Rendering paths:** Planned to be forward+ clustered (currently its a test scene in pure forward)
+**Rendering paths:** Forward+ Clusterd
 
 **Graphics API's:** Vulkan with dx12 support planned
 
@@ -20,7 +20,7 @@
 
 **Activity:**
 - Rough contributor count: 1
-- Rough user/community size: 5
+- Rough user/community size: 7
 
 ## AI Use
 How AI is actually used in the project, whether AI contributions are allowed, and whether the renderer is meaningfully human-designed or substantially AI-coded without technical oversight. Note that post-2021 public git history cannot reliably prove that merged code was never AI-assisted.
@@ -161,8 +161,8 @@ To match feature parity, the rendering pipeline needs to support the same/simila
 	- 🔜Support skinned mesh blur
 	- 🔜Ideally supported both in VR & desktop, but desktop is sufficient
 - 🔜Ambient Occlusion
-- 🔜Anti-aliasing
-	- 🔜MSAA (given by the rendering path)
+- ✅Anti-aliasing
+	- ✅MSAA (given by the rendering path)
 - 🔜 VR & single pass support
 
 **Nice to have:**
@@ -182,10 +182,10 @@ Note that the structure does not need to match the current ones, but the engine 
 
 ### Mesh Rendering
 **Must have:**
-- 🔜Triangle topology
+- ✅Triangle topology
 - 🔜Point topology
-- 🔜Some form of submesh support
-	- 🔜Allow specifying materials for each submesh - the whole mesh is rendered & culled as a unit, but each submesh is its own 
+- ✅Some form of submesh support
+	- ✅Allow specifying materials for each submesh - the whole mesh is rendered & culled as a unit, but each submesh is its own 
 - 🔜Shadow rendering support (depending on material support)
 	- 🔜Single sided
 	- 🔜Dual sided
@@ -196,14 +196,14 @@ Note that the structure does not need to match the current ones, but the engine 
 These requirements are on top of standard mesh rendering.
 
 **Required:**
-- 🔜1-4 bone support
-- 🔜Blendshape support
-	- 🔜Multi-frame support (each blendshape goes through several frames)
-	- 🔜Positions, Normals & Tangents
-- 🔜GPU accelerated for good performance
+- ✅1-4 bone support
+- ✅Blendshape support
+	- ✅Multi-frame support (each blendshape goes through several frames)
+	- ✅Positions, Normals & Tangents
+- ✅GPU accelerated for good performance
 
 **Nice to have:**
-- 🔜More than 4 bones
+- ✅More than 4 bones (push it as far as you want lmao)
 - 🔜Blendshape support
 	- 🔜UV’s, Colors
 	- 🔜Ability to cache rarely changing blendshapes to avoid recomputations
@@ -214,7 +214,7 @@ These requirements are on top of standard mesh rendering.
 **Required:**
 - Supported types:
   - 🔜Point
-  - 🔜Spot
+  - ✅Spot
   - 🔜Directional
 - Supported features:
 	- 🔜Hard & Soft realtime shadows for for all types
