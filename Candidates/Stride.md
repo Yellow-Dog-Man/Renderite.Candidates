@@ -35,6 +35,11 @@ How AI is actually used in the project, whether AI contributions are allowed, an
 # Existing usage / projects made with this
 The README points to community resources, demos, articles, shaders, physics examples, and the Stride Community Toolkit.
 
+- Virtual Desktop
+    - Probably most prominent and widely used VR application made in Stride
+    - https://doc.stride3d.net/en/community-resources/games-and-demos.html
+    - https://www.reddit.com/r/virtualreality/comments/1kdu8ml/why_the_hell_arent_more_people_talking_about/
+
 # Performance
 While it's difficult to gauge the performance before the actual implementation, it's valuable to gather some preliminary performance data to get a good read on how well the renderer might perform.
 
